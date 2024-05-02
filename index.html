@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #map {
+      width: 100%;
+      height: 700px;
+    }
+    .marker-popup {
+      background-color: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: center;">
+    <h1>Charities around Hong Kong, Mapped with descriptions</h1>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- about section -->
+  <div class="company-section">
+      <div class="company-info">
+          <h2 class="company-title">仁濟慈善基金 (Yan Chai Hospital)</h2>
+          <p class="company-about">Introduction: 仁濟慈善基金 is a charitable foundation located in Renji Hospital, Tsuen Wan. They are dedicated to providing medical and healthcare services to the community, promoting wellness and caring for those in need.</p>
+          <p class="company-contact">Contact: 電話: 852（8100 7711）</p>
+          <p class="company-contact">Email: info@yanchaicharity.org</p>
+          <p class="company-location">Location: 位於荃灣仁濟街的仁濟醫院 C 座</p>
+      </div>
+      <div class="company-photo company-photo-size"><img src="1.png" class="photo"></div>
+  </div>
+
+  <div class="company-section">
+      <div class="company-info">
+          <h2 class="company-title">香港兒童慈善基金會 (Hong Kong Children Charity Foundation)</h2>
+          <p class="company-about">Introduction: Hong Kong Children Charity Foundation is located on Castle Peak Road in Tsuen Wan. They focus on improving the lives of children in Hong Kong through various programs and initiatives, ensuring their well-being, education, and overall development.</p>
+          <p class="company-contact">Contact: 電話: 852（3529 2711）</p>
+          <p class="company-contact">Email: info@hkchildrencharity.org</p>
+          <p class="company-contact">Email: info@charityfoundation.org</p>
+          <p class="company-location">Location: 葵涌青山公路－葵涌段403-413號匯城集團大廈</p>
+      </div>
+      <div class="company-photo company-photo-size"><img src="2.png" class="photo"></div>
+  </div>
+
+  <div class="company-section">
+      <div class="company-info">
+          <h2 class="company-title">香港聾人子女協會 (CODA Hong Kong)</h2>
+          <p class="company-about">Introduction: CODA Hong Kong, located in Fu On House, Tai Wo Hau Estate, Kwai Chung, is an association that supports the children of deaf adults (CODA). They provide resources, education, and assistance to empower CODA individuals and promote inclusivity.</p>
+          <p class="company-contact">Contact: 電話: 852（6461 8840）</p>
+          <p class="company-contact">Email: info@coda.org.hk</p>
+      </div>
+      <div class="company-photo company-photo-size"><img src="3.png" class="photo"></div>
+  </div>
+
+  <div class="company-section">
+      <div class="company-info">
+          <h2 class="company-title">樂施會 (World Vision)</h2>
+          <p class="company-about">Introduction: 樂施會 (World Vision) is located at 28 Ma Po Road in North Point. They are a global humanitarian organization dedicated to tackling poverty and empowering communities worldwide, with a focus on child well-being and development.</p>
+          <p class="company-contact">Contact: 電話: 852（2520 2525）</p>
+          <p class="company-contact">Email: info@oxfam.org.hk</p>
+      </div>
+      <div class="company-photo company-photo-size"><img src="4.png" class="photo"></div>
+  </div>
+
+  <div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">擇善坊有限公司 (Charitable Choice Limited)</h2>
+        <p class="company-about">Introduction: 擇善坊有限公司 (Charitable Choice Limited) is situated at Wan Chai, on the 6th floor of 80 Queen's Road East. They operate as a go-to charity platform, connecting individuals and businesses with various charitable organizations and causes.</p>
+        <p class="company-contact">Contact: 電話: 852（3511 5524）</p>
+        <p class="company-contact">Email: info@charitablechoice.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="5.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">擇善坊有限公司 (Charitable Choice Limited)</h2>
+        <p class="company-about">Introduction: 擇善坊有限公司 (Charitable Choice Limited) is situated at Wan Chai, on the 6th floor of 80 Queen's Road East. They operate as a go-to charity platform, connecting individuals and businesses with various charitable organizations and causes.</p>
+        <p class="company-contact">Contact: 電話: 852（3511 5524）</p>
+        <p class="company-contact">Email: info@charitablechoice.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="6.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">Hong Kong Children In Need Foundation</h2>
+        <p class="company-about">Introduction: Hong Kong Children In Need Foundation is located in Shau Kei Wan, at 18 A Kung Ngam Village Road. They work towards improving the lives of underprivileged children in Hong Kong through education, healthcare, and social support.</p>
+        <p class="company-contact">Contact: 電話: 852（3589 6776）</p>
+        <p class="company-contact">Email: info@hkcin.org</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="7.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">Donation to Charity Organization|TREATS</h2>
+        <p class="company-about">Introduction: TREATS is situated in Chai Wan, specifically at Kornhill Block F, 3 Lok Man Road. They are a charitable organization that facilitates donations to various charity organizations, supporting diverse causes and initiatives.</p>
+        <p class="company-contact">Contact: 電話:（852） 3427 2024</p>
+        <p class="company-contact">Email: info@treats.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="8.png" class="photo"></div>
+</div>
+
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">惜食堂：Food Angel</h2>
+        <p class="company-about">Food Angel is a non-profit organization based in Hong Kong, established by the renowned charity Bo Charity Foundation in 2011. Its mission is to reduce food waste, alleviate hunger, support vulnerable groups in the community, and promote environmental conservation and sustainability.</p>
+        <p class="company-about">Through its food rescue and assistance programs, Food Angel collects unsold or near-expired but still safe and nutritious food. The food is then processed and cooked into nutritious meals and distributed to low-income families, the elderly, schoolchildren, and other people in need.</p>
+        <p class="company-about">Food Angel’s operations are supported by volunteers, food donors, and sponsors. The organization operates several community kitchens and food distribution centers across Hong Kong.</p>
+        <p class="company-contact">Address: 辦公室. 九龍深水埗海壇街235號豐盛大廈2樓</p>
+        <p class="company-contact">Email: info@foodangel.org.hk</p>
+        <p class="company-contact">Phone: +852 2801 5333</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="9.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">雅麗氏何妙齡那打素慈善基金會</h2>
+        <p class="company-title">Alice Ho Miu Ling Nethersole Charity Foundation</p>
+        <p class="company-about">Intro: 長者院舍、院牧服務、外展復康事工、全人健康教育工作、癌症病人及家庭支援服務等</p>
+        <p class="company-about">The Alice Ho Miu Ling Nethersole Charitable Foundation was founded in 1887. It is a Christian organization whose service purposes are: 1) Care, treatment, and comfort (in body, mind, and spirit) for the weak, sick, and elderly or those in need of assistance; 2) Promote and educate the community on health care and disease prevention; 3) Train doctors, nurses, midwives, and other allied health staff; and 4) Demonstrate and spread the Christian faith through services so that people can get help for body, mind, and spirit.</p>
+        <p class="company-contact">Address: 11 Chuen On Rd, Tai Po</p>
+        <p class="company-contact">Contact: <a href="http://www.nethersole.org.hk/">nethersole.org.hk</a> / 2689 2292</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="10.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">聖雅各福群會 (總會)</h2>
+        <p class="company-contact">地址: 香港灣仔石水渠街85號</p>
+        <p class="company-contact">電話: 2574 5201</p>
+        <p class="company-contact">傳真: 3104 3657</p>
+        <p class="company-contact">電郵: amoffice@sjs.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="11.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">聖雅各福群會賽馬會社會服務大樓 (堅尼地道大樓)</h2>
+        <p class="company-contact">地址: 香港灣仔堅尼地道100號</p>
+        <p class="company-contact">電話: 2574 5201</p>
+        <p class="company-contact">傳真: 3104 3657</p>
+        <p class="company-contact">電郵: amoffice@sjs.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="12.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">李節街宿舍</h2>
+        <p class="company-contact">地址: 香港灣仔李節街1號1-2樓</p>
+        <p class="company-contact">電話: 2865 7590</p>
+        <p class="company-contact">傳真: 2804 1752</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="13.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">雅聚天地－地區支援中心 （服務對象：東區及灣仔區殘疾人士）</h2>
+        <p class="company-contact">地址: 香港灣仔皇后大道東258號灣仔街市地下低層</p>
+        <p class="company-contact">電話: 2564 3338</p>
+        <p class="company-contact">傳真: 2892 1551</p>
+        <p class="company-contact">電郵: rs.wenet@sjs.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="14.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">時分天地公所</h2>
+        <p class="company-contact">地址: 香港灣仔慶雲街6-8號地下</p>
+        <p class="company-contact">電話: 2151 2979</p>
+        <p class="company-contact">傳真: 3104 3661</p>
+        <p class="company-contact">電郵: come@sjs.org.hk</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="15.png" class="photo"></div>
+</div>
+
+<div class="company-section">
+    <div class="company-info">
+        <h2 class="company-title">Headquarters of po leung kuk</h2>
+        <p class="company-contact">地址: 66 Leighton Road, Causeway Bay</p>
+        <p class="company-contact">電郵: Hong Kong plkinfo@poleungkuk.org.hk</p>
+        <p class="company-contact">電話: 2277 8888 2576 4509</p>
+    </div>
+    <div class="company-photo company-photo-size"><img src="16.png" class="photo"></div>
+</div>
+
+  <!-- Add more company sections here -->
+
+
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    function initMap() {
+      var map = L.map("map").setView([22.3683, 114.1217], 14); // Coordinates for Hong Kong
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors"
+      }).addTo(map);
+
+      // First Location - Yan Chai Hospital
+      var yanChaiHospitalMarker = L.marker([22.3697, 114.1197])
+        .bindPopup(`
+          <div class="marker-popup">
+            <h3>仁濟慈善基金 (Yan Chai Hospital)</h3>
+            <p>Introduction: 仁濟慈善基金 is a charitable foundation located in Renji Hospital, Tsuen Wan. They are dedicated to providing medical and healthcare services to the community, promoting wellness and caring for those in need.</p>
+            <p>Contact: 電話: 852（8100 7711）</p>
+            <p>Email: info@yanchaicharity.org</p>
+          </div>
+        `)
+        .addTo(map);
+
+      // Second Location - Evergreen Foundation Limited
+      var evergreenFoundationMarker = L.marker([22.374720, 114.112960])
+        .bindPopup(`
+          <div class="marker-popup">
+            <h3>Evergreen Foundation Limited 長青慈善基金</h3>
+            <p>Introduction: Evergreen Foundation Limited, located on Castle Peak Road in Tsuen Wan, is a charitable organization committed to supporting environmental conservation and sustainable development. They aim to create a greener and more sustainable future for Hong Kong.</p>
+            <p>Contact: 電話: 852（2807 0698）</p>
+            <p>Email: info@evergreenfoundation.org</p>
+          </div>
+        `)
+        .addTo(map);
+
+      // Third Location - Hong Kong Children Charity Foundation
+      var hkChildrenCharityMarker = L.marker([22.356080, 114.133690])
+        .bindPopup(`
+          <div class="marker-popup">
+            <h3>香港兒童慈善基金會 (Hong Kong Children Charity Foundation)</h3>
+            <p>Introduction: Hong Kong Children Charity Foundation is located on Castle Peak Road in Tsuen Wan. They focus on improving the lives of children in Hong Kong through various programs and initiatives, ensuring their well-being, education, and overall development.</p>
+            <p>Contact: 電話: 852（3529 2711）</p>
+            <p>Email: info@hkchildrencharity.org</p>
+            <p>Email: info@charityfoundation.org</p>
+          </div>
+        `)
+        .addTo(map);
+
+        // Fourth Location - CODA Hong Kong
+        var codaHongKongMarker = L.marker([22.3575, 114.1192])
+          .bindPopup(`
+            <div class="marker-popup">
+              <h3>CODA Hong Kong</h3>
+              <p>Introduction: CODA Hong Kong is a charitable organization located in Tsuen Wan. They focus on supporting individuals with hearing loss and promoting deaf culture in the community. They provide various services and programs to empower the deaf and hard of hearing.</p>
+              <p>Contact: 電話: 852（1234 5678）</p>
+              <p>Email: info@coda.org.hk</p>
+            </div>
+          `)
+          .addTo(map);
+
+          // Fifth Location - New Life Foundation
+          var newLifeFoundationMarker = L.marker([22.3507, 114.1075])
+            .bindPopup(`
+              <div class="marker-popup">
+                <h3>New Life Foundation</h3>
+                <p>Introduction: New Life Foundation is a charitable organization located in Tsuen Wan. They are dedicated to providing support and resources for individuals with disabilities and their families. They offer a wide range of services to enhance the quality of life for people with disabilities.</p>
+                <p>Contact: 電話: 852（9876 5432）</p>
+                <p>Email: info@newlifefoundation.org</p>
+              </div>
+            `)
+            .addTo(map);
+
+            // Sixth Location - Charitable Choice Limited
+            var charitableChoiceMarker = L.marker([22.276610, 114.169600])
+              .bindPopup(`
+                <div class="marker-popup">
+                  <h3>擇善坊有限公司 (Charitable Choice Limited)</h3>
+                  <p>Introduction: 擇善坊有限公司 (Charitable Choice Limited) is situated at Wan Chai, on the 6th floor of 80 Queen's Road East. They operate as a go-to charity platform, connecting individuals and businesses with various charitable organizations and causes.</p>
+                  <p>Introduction: 位於灣仔皇后大道東80號堅雄商業大廈602室的擇善坊有限公司。</p>
+                  <p>Contact: 電話：852（3511 5524）</p>
+                  <p>Email: info@charitablechoice.org.hk</p>
+                </div>
+              `)
+              .addTo(map);
+
+              // Seventh Location - Hong Kong Children In Need Foundation
+              var hkChildrenInNeedMarker = L.marker([22.282463, 114.233301])
+                .bindPopup(`
+                  <div class="marker-popup">
+                    <h3>Hong Kong Children In Need Foundation</h3>
+                    <p>Introduction: Hong Kong Children In Need Foundation is located in Shau Kei Wan, at 18 A Kung Ngam Village Road. They work towards improving the lives of underprivileged children in Hong Kong through education, healthcare, and social support.</p>
+                    <p>Introduction: 位於筲箕灣阿公岡村道18號的香港兒童慈善基金會。</p>
+                    <p>Contact: 電話: 852（3589 6776）</p>
+                    <p>Email: info@hkcin.org</p>
+                  </div>
+                `)
+                .addTo(map);
+
+                // Eighth Location - TREATS
+                var treatsMarker = L.marker([22.265607, 114.237964])
+                  .bindPopup(`
+                    <div class="marker-popup">
+                      <h3>Donation to Charity Organization | TREATS</h3>
+                      <p>Introduction: TREATS is situated in Chai Wan, specifically at Kornhill Block F, 3 Lok Man Road. They are a charitable organization that facilitates donations to various charity organizations, supporting diverse causes and initiatives.</p>
+                      <p>Introduction: 位於柴灣樂民道3號康山坊19樓A室的TREATS慈善組織。</p>
+                      <p>Contact: 電話:（852） 3427 2024</p>
+                      <p>Email: info@treats.org.hk</p>
+                    </div>
+                  `)
+                  .addTo(map);
+
+                  // Ninth Location - 脊髓肌肉萎縮症慈善基金
+                  var smaCharityMarker = L.marker([22.2861, 114.1927])
+                    .bindPopup(`
+                      <div class="marker-popup">
+                        <h3>脊髓肌肉萎縮症慈善基金</h3>
+                        <p>Introduction: This charitable foundation dedicated to spinal muscular atrophy (SMA) is located at 83 King's Road in North Point. They focus on raising awareness, providing support, and conducting research to improve the lives of individuals affected by SMA.</p>
+                        <p>Introduction: 位於北角英皇道83號聯合出版大廈14樓1402室的脊髓肌肉萎縮症慈善基金。</p>
+                        <p>Contact: 電話: 852（2811 1767）</p>
+                        <p>Email: info@smacharity.org.hk</p>
+                      </div>
+                    `)
+                    .addTo(map);
+
+                    // Tenth Location - Food Angel
+                    var foodAngelMarker = L.marker([22.33023, 114.15945])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>惜食堂：Food Angel</h3>
+                          <p>Food Angel is a non-profit organization based in Hong Kong, established by the renowned charity Bo Charity Foundation in 2011. Its mission is to reduce food waste, alleviate hunger, support vulnerable groups in the community, and promote environmental conservation and sustainability.</p>
+                          <p>Through its food rescue and assistance programs, Food Angel collects unsold or near-expired but still safe and nutritious food. The food is then processed and cooked into nutritious meals and distributed to low-income families, the elderly, schoolchildren, and other people in need.</p>
+                          <p>Food Angel’s operations are supported by volunteers, food donors, and sponsors. The organization operates several community kitchens and food distribution centers across Hong Kong.</p>
+                          <p>Address: 辦公室. 九龍深水埗海壇街235號豐盛大廈2樓</p>
+                          <p>Email: info@foodangel.org.hk</p>
+                          <p>Phone: +852 2801 5333</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+                      var location11Marker = L.marker([22.458521, 114.174913])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>Alice Ho Miu Ling Nethersole Charity Foundation</h3>
+                          <p>長者院舍、院牧服務、外展復康事工、全人健康教育工作、癌症病人及家庭支援服務等</p>
+                          <p>The Alice Ho Miu Ling Nethersole Charitable Foundation was founded in 1887. It is a Christian organization whose service purposes are: 1) Care, treatment, and comfort (in body, mind, and spirit) for the weak, sick, and elderly or those in need of assistance; 2) Promote and educate the community on health care and disease prevention; 3) Train doctors, nurses, midwives, and other allied health staff; and 4) Demonstrate and spread the Christian faith through services so that people can get help for body, mind, and spirit.</p>
+                          <p>Address: 11 Chuen On Road, Tai Po, Hong Kong</p>
+                          <p>Contact: <a href="https://www.nethersole.org.hk/">nethersole.org.hk</a>, 2689 2292</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+                      var location12Marker = L.marker([22.273855, 114.173969])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>聖雅各福群會 (總會)</h3>
+                          <p>地址: 香港灣仔石水渠街85號</p>
+                          <p>電話: 2574 5201</p>
+                          <p>傳真: 3104 3657</p>
+                          <p>電郵: amoffice@sjs.org.hk</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+
+                      var location13Marker = L.marker([22.272617, 114.173624])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>聖雅各福群會賽馬會社會服務大樓 (堅尼地道大樓)</h3>
+                          <p>地址: 香港灣仔堅尼地道100號</p>
+                          <p>電話: 2574 5201</p>
+                          <p>傳真: 3104 3657</p>
+                          <p>電郵: amoffice@sjs.org.hk</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+                      var location14Marker = L.marker([22.277001, 114.169618])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>李節街宿舍</h3>
+                          <p>地址: 香港灣仔李節街1號1-2樓</p>
+                          <p>電話: 2865 7590</p>
+                          <p>傳真: 2804 1752</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+                      var location15Marker = L.marker([22.275756, 114.173295])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>雅聚天地－地區支援中心</h3>
+                          <p>服務對象：東區及灣仔區殘疾人士</p>
+                          <p>地址: 香港灣仔皇后大道東258號灣仔街市地下低層</p>
+                          <p>電話: 2564 3338</p>
+                          <p>傳真: 2892 1551</p>
+                          <p>電郵: rs.wenet@sjs.org.hk</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+                      var location16Marker = L.marker([22.27363, 114.174521])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>時分天地公所</h3>
+                          <p>地址: 香港灣仔慶雲街6-8號地下</p>
+                          <p>電話: 2151 2979</p>
+                          <p>傳真: 3104 3661</p>
+                          <p>電郵: come@sjs.org.hk</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+                      var location17Marker = L.marker([22.276534, 114.184681])
+                      .bindPopup(`
+                        <div class="marker-popup">
+                          <h3>Headquarters of Po Leung Kuk</h3>
+                          <p>地址: 66 Leighton Road, Causeway Bay, Hong Kong</p>
+                          <p>電郵: plkinfo@poleungkuk.org.hk</p>
+                          <p>電話: 2277 8888 2576 4509</p>
+                        </div>
+                      `)
+                      .addTo(map);
+
+
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", initMap);
+  </script>
+</body>
+</html>
