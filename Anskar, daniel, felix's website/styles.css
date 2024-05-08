@@ -1,0 +1,52 @@
+/* Style for the company sections */
+.company-section {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Style for the company information */
+.company-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Style for the company title */
+.company-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style for the company about */
+.company-about {
+    margin-bottom: 10px;
+}
+
+/* Style for the company contact */
+.company-contact {
+    margin-bottom: 10px;
+}
+
+/* Style for the company location */
+.company-location {
+    margin-bottom: 10px;
+}
+
+/* Style for the company photo */
+.company-photo {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+}
+
+.company-photo-size {
+    background-size: cover;
+    background-position: center;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+}
